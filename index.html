@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computer-use cache — Reusable computer automation | Super</title>
+  <meta name="description" content="Learn how Super's computer-use cache makes repeated browser and desktop automations cheaper and more reliable for builders and operators." />
+  <link rel="canonical" href="https://app.getsupers.com/use-cases/computer-use-cache/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Computer-use cache for repeatable AI agents" />
+  <meta property="og:description" content="A practical operator guide to reusable computer automation with Super." />
+  <meta property="og:url" content="https://app.getsupers.com/use-cases/computer-use-cache/" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="ambient-grid"></div>
+<div class="paper-noise"></div>
+<div class="page">
+  <nav class="nav">
+    <div class="brand"><img src="https://storage.googleapis.com/cheatlayer/landing/icon-transparent-512.png" alt="Super" /></div>
+    <div class="nav-links">
+      <a href="https://app.getsupers.com/use-cases/order-food-with-ai/">Order food with AI</a>
+      <a href="https://app.getsupers.com/use-cases/book-rides-with-ai/">Book rides with AI</a>
+      <a href="https://app.getsupers.com/use-cases/text-message-ai-assistant/">Text message AI assistant</a>
+      <a href="https://app.getsupers.com/use-cases/meta-display-ai-assistant/">Meta Display AI assistant</a>
+      <a href="https://app.getsupers.com/use-cases/ai-agent-build-websites/">AI agent to build websites</a>
+    </div>
+    <a class="btn btn-black nav-cta" href="https://app.getsupers.com/general?login=1&open_login=1">Try Super</a>
+  </nav>
+
+  <header class="hero">
+    <div class="shell hero-inner">
+      <h1>Computer-use cache for repeated browser and desktop workflows</h1>
+      <p class="hero-sub">If you run the same computer tasks every day, week, or deploy, Super’s <strong>computer-use cache</strong> turns successful runs into reusable action traces—so the next run is cheaper, faster, and more reliable.</p>
+      <div class="hero-actions">
+        <a class="btn btn-black" href="https://app.getsupers.com/general?login=1&open_login=1">Start with Super</a>
+        <a class="btn btn-white" href="#guide">Read the operator guide</a>
+      </div>
+      <div class="media-frame">
+        <video autoplay muted loop playsinline src="https://storage.googleapis.com/cheatlayer/landing/hero-0607-2-3.mp4"></video>
+      </div>
+    </div>
+  </header>
+
+  <section class="chapter">
+    <div class="shell">
+      <h2>Why cache computer use at all?</h2>
+      <div class="bento">
+        <div class="bento-item"><h3>Lower marginal cost</h3><p>Repeated UI actions don’t need to be re-inferred from scratch. Cache reuse means less model work on the same clicks, forms, and navigation.</p></div>
+        <div class="bento-item"><h3>Higher reliability</h3><p>Successful traces reduce brittle improvisation across logins, multi-step flows, and confirmation screens.</p></div>
+        <div class="bento-item"><h3>Operator control</h3><p>Define confirmation points and guardrails while still benefiting from automation speed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="chapter">
+    <div class="shell">
+      <article class="long-form-guide">
+        <p class="byline">By the Super editorial & research team · Updated July 2026 · Built from field experience and cited research</p>
+        <h2>Market context</h2>
+        <p>Computer-using AI agents moved from novelty to table stakes in 2026. Google pushed Gemini deeper into direct UI control, while research and benchmarks showed that once agents can operate browsers and desktops, reliability—not raw intelligence—becomes the bottleneck. Security reporting highlighted how fragile serial tool calls can be when agents improvise each run. At the same time, builders and operators discovered a cost problem: repeating the same computer work every day costs roughly the same each time if the agent must reason from scratch.</p>
+        <p>This is where a reusable execution layer matters. Architectural discussions comparing MCP, RAG, and skills emphasize composability and repeatability over clever prompts. Practical guidance from Anthropic reinforces simple, durable patterns. A computer-use cache fits that philosophy: it records what actually worked in the UI and reuses it. Super is positioned for this reality. While general assistants like ChatGPT, Gemini, Grok, and Siri increasingly demonstrate computer control, and market tools like Folk and Orchids explore automation niches, Super focuses on repeated, operator-grade workflows that benefit directly from cache reuse.</p>
+
+        <h2>How to evaluate and use this workflow</h2>
+        <h3>How to define a cache-worthy task</h3>
+        <ol>
+          <li><strong>Identify a repeated computer workflow.</strong> Choose a task you run at least weekly: pulling the same report from a dashboard, updating listings in a web CMS, or reordering supplies through a web UI. The key signal is repetition with small parameter changes, which is where a computer-use cache delivers compounding value.</li>
+          <li><strong>Run the task once with full observation.</strong> Let Super operate the browser or desktop while you watch. This first run establishes the action trace. Be explicit about confirmations, waits, and error handling so the recorded steps reflect real-world timing and UI quirks.</li>
+          <li><strong>Mark confirmation moments.</strong> For operators, not every step should auto-execute. Flag points where human approval is required—final submissions, payments, or irreversible actions. The cache stores the path while respecting these pauses.</li>
+          <li><strong>Parameterize what changes.</strong> Tell Super which inputs vary run to run: dates, SKUs, quantities, or filenames. Everything else becomes stable context for the cached trace, reducing inference on future runs.</li>
+          <li><strong>Replay and monitor.</strong> On the second and third runs, watch for drift. Minor UI changes can be patched once and then reused again, keeping the cache fresh instead of brittle.</li>
+        </ol>
+
+        <h2>Implementation checklist</h2>
+        <ul>
+          <li><strong>Choose the right surface.</strong> Decide whether the task runs best via cloud browser, local desktop streamer, SMS trigger, or Meta Display view. Consistency of surface improves cache stability across runs.</li>
+          <li><strong>Define scope clearly.</strong> Limit what the agent can touch during the workflow. Narrow scopes reduce both security risk and accidental divergence from the cached path.</li>
+          <li><strong>Document the happy path.</strong> Write a short operator note describing what success looks like on screen. This helps future maintainers understand why the cached trace exists.</li>
+          <li><strong>Set alerting for failures.</strong> Even with caching, UI changes happen. Route failures to a channel where an operator can review and update the trace once.</li>
+          <li><strong>Review cache reuse periodically.</strong> Quarterly reviews ensure the cached workflow still matches business reality and hasn’t silently drifted.</li>
+          <li><strong>Compare alternatives honestly.</strong> Test the same workflow in ChatGPT, Gemini, Grok, or Siri-style assistants to understand where general agents still excel and where Super’s cache advantage compounds.</li>
+        </ul>
+
+        <h2>Risks and limits</h2>
+        <ul>
+          <li><strong>UI drift.</strong> Cached actions depend on interface stability. Significant redesigns require a refresh run. The risk is manageable but real for fast-moving web apps.</li>
+          <li><strong>Over-automation.</strong> Automating irreversible actions without confirmation can create costly mistakes. Operator judgment should remain in the loop.</li>
+          <li><strong>Security surface.</strong> As reporting shows, computer-using agents expand attack surfaces. Sandboxing, least privilege, and monitoring are non-negotiable.</li>
+          <li><strong>Misfit tasks.</strong> One-off research or creative exploration may be better served by general assistants like ChatGPT or Gemini, where caching adds little value.</li>
+        </ul>
+
+        <h2>FAQ</h2>
+        <h3>What exactly is a computer-use cache?</h3>
+        <p>It is a reusable record of successful computer actions—clicks, form fills, navigation, waits—that Super can replay for the same workflow later. Unlike text memory, it captures what actually happened in the UI.</p>
+        <h3>Is this cheaper than rerunning an agent every time?</h3>
+        <p>For repeated workflows, yes. Cache reuse reduces the amount of reasoning and exploration required on each run, lowering marginal cost without claiming fixed pricing guarantees.</p>
+        <h3>How does this compare to Gemini’s computer use?</h3>
+        <p>Gemini demonstrates strong native computer control. Super differentiates by emphasizing durable reuse of past successful runs for operators who repeat the same tasks.</p>
+        <h3>Can I still use ChatGPT or Grok alongside Super?</h3>
+        <p>Absolutely. Many teams use ChatGPT or Grok for ideation and analysis, then hand off operationally repetitive work to Super where the cache shines.</p>
+        <h3>What about Siri, Folk, or Orchids?</h3>
+        <p>Siri remains voice-first and device-centric. Folk and Orchids provide niche automation tools. Super focuses specifically on personal agents that operate computers with reusable execution memory.</p>
+        <h3>Is human approval required?</h3>
+        <p>For sensitive actions, yes by design. Super supports assisted workflows where you confirm before final execution.</p>
+
+        <h2>Sources</h2>
+        <ul>
+          <li><a href="https://www.searchenginejournal.com/google-gemini-can-now-control-your-computer-hackers-are-already-targeting-ai-agents/">Search Engine Journal on Gemini computer use</a></li>
+          <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic: Building effective agents</a></li>
+          <li><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-computer-use-model/">Google DeepMind computer-use model</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="shell">
+      <h2>Build cheaper, more reliable repeated automations</h2>
+      <a class="btn btn-black" href="https://app.getsupers.com/general?login=1&open_login=1">Try Super now</a>
+    </div>
+  </section>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Use a computer-use cache for repeated workflows",
+  "step": [
+    {"@type":"HowToStep","name":"Identify a repeated workflow","text":"Choose a computer task you run weekly or more where steps are mostly identical."},
+    {"@type":"HowToStep","name":"Run once with observation","text":"Let Super execute the task end to end to capture the successful action trace."},
+    {"@type":"HowToStep","name":"Set confirmation points","text":"Define where human approval is required before proceeding."},
+    {"@type":"HowToStep","name":"Parameterize inputs","text":"Specify which fields change between runs so the cache stays reusable."},
+    {"@type":"HowToStep","name":"Replay and monitor","text":"Reuse the cached workflow and update it if the UI changes."}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://app.getsupers.com/"},
+    {"@type":"ListItem","position":2,"name":"Use cases","item":"https://app.getsupers.com/use-cases/"},
+    {"@type":"ListItem","position":3,"name":"Computer-use cache","item":"https://app.getsupers.com/use-cases/computer-use-cache/"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is a computer-use cache?","acceptedAnswer":{"@type":"Answer","text":"A reusable record of successful computer actions that can be replayed for repeated workflows."}},
+    {"@type":"Question","name":"Who benefits most from this?","acceptedAnswer":{"@type":"Answer","text":"Builders and operators running the same browser or desktop tasks repeatedly."}},
+    {"@type":"Question","name":"Does it replace ChatGPT or Gemini?","acceptedAnswer":{"@type":"Answer","text":"No. It complements general assistants by focusing on durable execution."}},
+    {"@type":"Question","name":"Is it safe?","acceptedAnswer":{"@type":"Answer","text":"Safety depends on sandboxing, scope control, and human confirmations."}},
+    {"@type":"Question","name":"How often should caches be reviewed?","acceptedAnswer":{"@type":"Answer","text":"At least quarterly or after major UI changes."}},
+    {"@type":"Question","name":"Can I start small?","acceptedAnswer":{"@type":"Answer","text":"Yes. Begin with one low-risk workflow and expand."}}
+  ]
+}
+</script>
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
